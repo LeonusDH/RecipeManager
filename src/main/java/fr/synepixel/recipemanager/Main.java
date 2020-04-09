@@ -1,7 +1,7 @@
 package fr.synepixel.recipemanager;
 
 import com.google.inject.Inject;
-import fr.synepixel.recipemanager.commands.CommandAddCraft;
+import fr.synepixel.recipemanager.command.CommandAddCraft;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.spec.CommandSpec;

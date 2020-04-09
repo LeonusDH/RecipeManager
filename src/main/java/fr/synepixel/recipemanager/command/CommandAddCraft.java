@@ -1,6 +1,6 @@
-package fr.synepixel.recipemanager.commands;
+package fr.synepixel.recipemanager.command;
 
-import fr.synepixel.recipemanager.exceptions.HaveToBeAPlayerException;
+import fr.synepixel.recipemanager.exception.HaveToBeAPlayerException;
 import org.spongepowered.api.command.CommandException;
 import org.spongepowered.api.command.CommandResult;
 import org.spongepowered.api.command.CommandSource;
@@ -14,6 +14,8 @@ public class CommandAddCraft implements CommandExecutor {
     public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
 
         if (!(src instanceof Player)) throw new HaveToBeAPlayerException(src);
+
+        Player player = src;
 
         return null;
     }

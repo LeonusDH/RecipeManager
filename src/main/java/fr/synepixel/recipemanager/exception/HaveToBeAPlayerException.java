@@ -1,4 +1,4 @@
-package fr.synepixel.recipemanager.exceptions;
+package fr.synepixel.recipemanager.exception;
 
 import org.spongepowered.api.command.CommandSource;
 
