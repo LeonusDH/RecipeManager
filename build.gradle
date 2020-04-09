@@ -25,3 +25,18 @@ sponge {
         id = 'recipemanager'
     }
 }
+
+project.ext.spongeDir = '../Forge'
+
+
+task copyToSponge(type: Copy) {
+    from buildDir.getPath() + '/libs/' + archivesBaseName + '-' + version + '.jar'
+    into spongeDir + '/mods/plugins/'
+    dependsOn assemble
+}
+
+task runSponge(type: Exec) {
+    commandLine = ['java', '-jar', spongeDir + '/forge.jar', '--nogui']
+    setWorkingDir file(spongeDir)
+    dependsOn copyToSponge
+}
