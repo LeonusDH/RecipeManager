@@ -12,10 +12,12 @@ compileJava.options.encoding = 'UTF-8'
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
     compile 'org.spongepowered:spongeapi:7.2.0'
+    compile 'com.github.xemiru.sponge:boxboy:1.2'
 }
 
 sponge {
