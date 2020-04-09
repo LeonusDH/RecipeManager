@@ -1,17 +1,15 @@
 package fr.synepixel.recipemanager;
 
 import com.google.inject.Inject;
-import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-import ninja.leaping.configurate.loader.ConfigurationLoader;
+import fr.synepixel.recipemanager.commands.CommandAddCraft;
 import org.slf4j.Logger;
-import org.spongepowered.api.config.ConfigDir;
-import org.spongepowered.api.config.DefaultConfig;
+import org.spongepowered.api.Sponge;
+import org.spongepowered.api.command.spec.CommandSpec;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.state.GameStartingServerEvent;
 import org.spongepowered.api.event.game.state.GameStoppingServerEvent;
 import org.spongepowered.api.plugin.Plugin;
-
-import java.nio.file.Path;
+import org.spongepowered.api.text.Text;
 
 @Plugin(
         name = "RecipesManager",
@@ -27,20 +25,11 @@ public class Main {
     @Inject
     private Logger logger;
 
-    @Inject
-    @DefaultConfig(sharedRoot = false)
-    private Path defaultConfig;
-
-    @Inject
-    @DefaultConfig(sharedRoot = false)
-    private ConfigurationLoader<CommentedConfigurationNode> configManager;
-
-    @Inject
-    @ConfigDir(sharedRoot = false)
-    private Path privateConfigDir;
-
     @Listener
     public void onServerStart(GameStartingServerEvent event) {
+
+        CommandSpec cmd = CommandSpec.builder().executor(new CommandAddCraft()).permission("craft.add").description(Text.of("Add a recipe")).build();
+        Sponge.getCommandManager().register(this, cmd, "addcraft", "addrecipe", "add-craft", "add-recipe");
 
     }
 
