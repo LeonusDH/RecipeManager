@@ -18,6 +18,6 @@ public class Main {
 
     @Listener
     public void onServerStop(GameStoppingServerEvent event) {
-
+        logger.info("Crafting plugin stopped !");
     }
 }
