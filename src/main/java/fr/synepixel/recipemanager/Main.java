@@ -28,15 +28,15 @@ public class Main {
     private Logger logger;
 
     @Inject
-    @DefaultConfig(sharedRoot = true)
+    @DefaultConfig(sharedRoot = false)
     private Path defaultConfig;
 
     @Inject
-    @DefaultConfig(sharedRoot = true)
+    @DefaultConfig(sharedRoot = false)
     private ConfigurationLoader<CommentedConfigurationNode> configManager;
 
     @Inject
-    @ConfigDir(sharedRoot = true)
+    @ConfigDir(sharedRoot = false)
     private Path privateConfigDir;
 
     @Listener
